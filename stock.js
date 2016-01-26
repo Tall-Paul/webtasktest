@@ -1,14 +1,4 @@
 
-request.get(url, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-        var csv = body;
-
-        // Continue with your processing here.
-    }
-});
-
-
-
 module.exports =
     function (context, req, res) {
         //get stock
