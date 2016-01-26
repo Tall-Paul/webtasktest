@@ -11,7 +11,7 @@ module.exports =
             if (!error && response.statusCode == 200) {
                 var csv = body;
                 res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.send(JSON.stringify({ text: csv }));
+                res.send("hello");
             }
         });
 
