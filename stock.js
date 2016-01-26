@@ -10,10 +10,8 @@ module.exports =
         request.get(url, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 var csv = body;
-                res.setHeader('Content-Type', 'application/json');
-                res.send(JSON.stringify({ text: csv }));
+                //res.setHeader('Content-Type', 'application/json');
+                res.send("hello");
             }
         });
-
-
     }
