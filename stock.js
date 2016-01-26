@@ -10,19 +10,10 @@ module.exports =
         request.get(url, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 var csv = body;
-                res.writeHead(200, { 'Content-Type': 'text/html' });
-                res.end(require('ejs').render(view.stringify(), {
-                    stock: stock
-                }));
-
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.send(JSON.stringify({ text: csv }));
             }
         });
 
 
     }
-
-function view() {/*
-    {
-      text: <%= stock %>
-    }
-*/}
