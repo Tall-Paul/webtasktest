@@ -1,7 +1,3 @@
-var request = require('request');
-var stock = 'AAPL';
-var url = 'http://finance.yahoo.com/d/quotes.csv?s=';
-url = url+stock+&f=nab;
 
 request.get(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -20,7 +16,7 @@ module.exports =
         var textString = context.body.text;
         stock = textString.replace('stock: ','');
         var url = 'http://finance.yahoo.com/d/quotes.csv?s=';
-        url = url+stock+'&f=nab';
+        url = url+stock+"&f=nab";
         request.get(url, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 var csv = body;
